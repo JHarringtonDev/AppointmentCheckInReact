@@ -25,7 +25,8 @@ code {
 
 .navItems>li{
   font-size: 1.5rem;
-  background-color: lightgreen;
+  font-color: black;
+  background-color: green;
   float: right;
   margin-right: 0.25rem;
   text-align: center;
