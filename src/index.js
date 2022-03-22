@@ -14,10 +14,10 @@ ReactDOM.render(
       <Header />
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/check-in' element={<CheckIn/>} />
-        <Route path='/log-in' element={<Login/>} />
-        <Route path='/make-appointment' element={<MakeAppointment/>} />
-        <Route path='/appointment-queue' element={<Queue/>} />
+        <Route path='/CheckIn' element={<CheckIn/>} />
+        <Route path='/Login' element={<Login/>} />
+        <Route path='/MakeAppointment' element={<MakeAppointment/>} />
+        <Route path='/Queue' element={<Queue/>} />
         
       </Routes>
     </Router>
