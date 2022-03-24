@@ -10,10 +10,10 @@ const Header = (props) => {
             </NavLink>
             <nav>
                 <ul className="navItems">
-                    <li><NavLink to="/Queue">Appointment Queue</NavLink></li>
-                    <li><NavLink to="/Login">Employee Login</NavLink></li>
-                    <li><NavLink to="/CheckIn">Check-in</NavLink></li>
-                    <li><NavLink to="/MakeAppointment">Make Appointment</NavLink></li>
+                    <li><NavLink to="/Queue" className="inactive" activeClassName="active" exact={true}>Appointment Queue</NavLink></li>
+                    <li><NavLink to="/Login" className="inactive" activeClassName="active" exact={true}>Employee Login</NavLink></li>
+                    <li><NavLink to="/CheckIn" className="inactive" activeClassName="active" exact={true}>Check-in</NavLink></li>
+                    <li><NavLink to="/MakeAppointment" className="inactive" activeClassName="active" exact={true}>Make Appointment</NavLink></li>
                     
                 </ul>
             </nav>

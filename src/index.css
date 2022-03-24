@@ -23,6 +23,16 @@ code {
   margin: 0;
 }
 
+.inactive {
+  color: white;
+  text-decoration: none;
+}
+
+.active {
+  color: lightgrey;
+  text-decoration: none;
+}
+
 .navItems>li{
   font-size: 1.5rem;
   color: black;

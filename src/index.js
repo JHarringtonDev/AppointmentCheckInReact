@@ -11,23 +11,16 @@ import {
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/CheckIn' element={<CheckIn/>} />
-        <Route path='/Login' element={<Login/>} />
-        <Route path='/MakeAppointment' element={<MakeAppointment/>} />
-        <Route path='/Queue' element={<Queue/>} />
-        
-      </Routes>
+      <App />
     </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();
 
-export { default as Home } from './components/Home'
+// export { default as Home } from './components/Home'
