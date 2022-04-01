@@ -47,6 +47,7 @@ recordRoutes.route("/record/add").post(function (req, response) {
   let myobj = {
     fname: req.body.fname,
     lname: req.body.lname,
+    phoneNumber: req.body.phoneNumber,
     appointmentTime: req.body.appointmentTime,
     appointmentDate: req.body.appointmentDate,
     checkedIn: false,

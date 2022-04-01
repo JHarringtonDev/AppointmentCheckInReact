@@ -11,7 +11,7 @@ const Header = (props) => {
             <nav>
                 <ul className="navItems">
                     <li><NavLink to="/Queue" className="inactive" activeClassName="active" exact={true}>Appointment Queue</NavLink></li>
-                    <li><NavLink to="/Login" className="inactive" activeClassName="active" exact={true}>Employee Login</NavLink></li>
+                    <li><NavLink to="/Dashboard" className="inactive" activeClassName="active" exact={true}>Employee Dashboard</NavLink></li>
                     <li><NavLink to="/CheckIn" className="inactive" activeClassName="active" exact={true}>Check-in</NavLink></li>
                     <li><NavLink to="/MakeAppointment" className="inactive" activeClassName="active" exact={true}>Make Appointment</NavLink></li>
                     

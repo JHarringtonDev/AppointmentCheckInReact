@@ -4,3 +4,5 @@ export {default as CheckIn} from "./CheckIn";
 export {default as Login} from "./Login";
 export {default as MakeAppointment} from "./MakeAppointment";
 export {default as Queue} from "./Queue";
+export {default as Logout} from "./Dashboard"
+export {default as LoginButton} from "./LoginButton"

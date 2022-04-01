@@ -7,6 +7,7 @@ const MakeAppointment = (props) => {
         lname: "",
         appointmentDate: "",
         appointmentTime: "",
+        phoneNumber: "",
         checkedIn: false,
       });
       const navigate = useNavigate();
@@ -37,7 +38,7 @@ const MakeAppointment = (props) => {
           return;
         });
       
-        setForm({ fname: "", lname: "", appointmentTime: "", appointmentDate: "", checkedIn: false});
+        setForm({ fname: "", lname: "", appointmentTime: "", appointmentDate: "",phoneNumber: "", checkedIn: false});
         navigate("/");
       }
       
@@ -54,6 +55,7 @@ const MakeAppointment = (props) => {
               id="fname"
               value={form.fname}
               onChange={(e) => updateForm({ fname: e.target.value })}
+              required
             />
           </div>
           <div className="form-group">
@@ -64,8 +66,25 @@ const MakeAppointment = (props) => {
               id="lname"
               value={form.lname}
               onChange={(e) => updateForm({ lname: e.target.value })}
+              required
             />
           </div>
+          <div className="form-group">
+          <label htmlFor="phoneNumber">Phone Number:</label>
+            {/* <div className="form-check form-check-inline"> */}
+              <input
+                // className="form-check-input"
+                type="tel"
+                name="phoneNumber"
+                id="phoneNumber"
+                value={form.phoneNumber}
+                maxlength= "10"
+                minlength= "10"
+                onChange={(e) => updateForm({ phoneNumber: e.target.value })}
+                required
+              />
+            {/* </div> */}
+            </div>
           <div className="form-group">
           <label htmlFor="appointmentTime">Appointment Time:</label>
             {/* <div className="form-check form-check-inline"> */}
@@ -78,6 +97,7 @@ const MakeAppointment = (props) => {
                 max="15:30"
                 value={form.appointmentTime}
                 onChange={(e) => updateForm({ appointmentTime: e.target.value })}
+                required
               />
             {/* </div> */}
             </div>
@@ -91,6 +111,7 @@ const MakeAppointment = (props) => {
                 id="appointmentDate"
                 value={form.appointmentDate}
                 onChange={(e) => updateForm({ appointmentDate: e.target.value })}
+                required
               />
             {/* </div> */}
             </div>

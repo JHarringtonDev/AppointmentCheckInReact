@@ -29,18 +29,22 @@ code {
 }
 
 .active {
-  color: lightgrey;
+  color: rgb(237, 237, 237);
   text-decoration: none;
 }
 
 .navItems>li{
   font-size: 1.5rem;
   color: black;
-  background-color: green;
+  background-color: #4caf50;
   float: right;
   margin-right: 0.25rem;
   text-align: center;
   padding: 1.25rem 0.5rem 1.25rem 0.5rem;
+}
+
+.navItems>li:hover{
+  background-color:#45a049;
 }
 
 .Header{
