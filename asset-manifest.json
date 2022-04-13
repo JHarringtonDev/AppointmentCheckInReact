@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.46e89291.css",
-    "main.js": "/static/js/main.1d70b954.js",
+    "main.js": "/static/js/main.aa16b6e0.js",
     "static/media/Journey-Full-Logo.png": "/static/media/Journey-Full-Logo.971b57b2cea79aed24de.png",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "main.46e89291.css.map": "/static/css/main.46e89291.css.map",
-    "main.1d70b954.js.map": "/static/js/main.1d70b954.js.map"
+    "main.aa16b6e0.js.map": "/static/js/main.aa16b6e0.js.map"
   },
   "entrypoints": [
     "static/css/main.46e89291.css",
-    "static/js/main.1d70b954.js"
+    "static/js/main.aa16b6e0.js"
   ]
 }
