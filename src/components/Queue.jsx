@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
  
 const Record = (props) => (
- <tr>
-   <td>{props.record.fname}</td>
-   <td>{props.record.lname}</td>
-   <td>{props.record.appointmentTime}</td>
-   <td>{props.record.appointmentDate}</td>
-   <td>
+ <div className="qAppoint">
+   <span className="qFName">{props.record.fname.substring(0, 3)}</span>
+   <span className="qLName">{props.record.lname[0]}.</span>
+   <span className="qTime">{props.record.appointmentTime}</span><br/>
+   <span className="qType">Appointment</span>
+   {/* <td>{props.record.appointmentDate}</td> */}
+   {/* <td>
      <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
      <button className="btn btn-link"
        onClick={() => {
@@ -16,8 +17,8 @@ const Record = (props) => (
      >
        Delete
      </button>
-   </td>
- </tr>
+   </td> */}
+ </div>
 );
  
 export default function Queue() {
@@ -55,32 +56,21 @@ export default function Queue() {
  
  // This method will map out the records on the table
  function recordList() {
-   return records.map((record) => {
-     return (
+   {return records.map((record) => {
+
+     if(record.checkedIn === true){return (
        <Record
          record={record}
-         deleteRecord={() => deleteRecord(record._id)}
-         key={record._id}
+        //  key={record._id}
        />
-     );
-   });
+     );}
+   });}
  }
 //  console.log(records)
  // This following section will display the table with the records of individuals.
  return (
-   <div>
-     <h3>Appointment Queue</h3>
-     <table className="table table-striped" style={{ marginTop: 20 }}>
-       <thead>
-         <tr>
-           <th>First Name</th>
-           <th>Last Name</th>
-           <th>Time</th>
-           <th>Date</th>
-         </tr>
-       </thead>
-       <tbody>{recordList()}</tbody>
-     </table>
+   <div className="appointList">
+    {recordList()}
    </div>
  );
 }

@@ -73,7 +73,7 @@ const MakeAppointment = (props) => {
           <label htmlFor="phoneNumber">Phone Number:</label>
             {/* <div className="form-check form-check-inline"> */}
               <input
-                // className="form-check-input"
+                className="form-control"
                 type="tel"
                 name="phoneNumber"
                 id="phoneNumber"
@@ -89,7 +89,7 @@ const MakeAppointment = (props) => {
           <label htmlFor="appointmentTime">Appointment Time:</label>
             {/* <div className="form-check form-check-inline"> */}
               <input
-                // className="form-check-input"
+                className="form-control"
                 type="time"
                 name="appointmentTime"
                 id="appointmentTime"
@@ -105,7 +105,7 @@ const MakeAppointment = (props) => {
           <label htmlFor="appointmentDate">Appointment Date:</label>
             {/* <div className="form-check form-check-inline"> */}
               <input
-                // className="form-check-input"
+                className="form-control"
                 type="date"
                 name="appointmentDate"
                 id="appointmentDate"

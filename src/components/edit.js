@@ -177,7 +177,7 @@ const result = records.find( ({ _id }) => _id === gId );
           <label htmlFor="phoneNumber">Phone Number:</label>
             {/* <div className="form-check form-check-inline"> */}
               <input
-                // className="form-check-input"
+                className="form-control"
                 type="tel"
                 name="phoneNumber"
                 id="phoneNumber"

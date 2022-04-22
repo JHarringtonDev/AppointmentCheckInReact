@@ -56,3 +56,40 @@ code {
   font-size: 7rem;
   text-align: center;
 }
+
+.qFName {
+  font-size: 4rem;
+}
+
+.qLName {
+  font-size: 4rem;
+  padding-left: 1rem;
+}
+
+.qTime {
+  font-size: 3rem;
+  padding-left: 1rem;
+}
+
+.qAppoint{
+  width: 22rem;
+  background-color: lightgrey;
+  box-shadow: #000;
+  /* border: #000 solid 5px; */
+  margin: 1rem;
+}
+
+/* .qType{
+  text-align: left;
+} */
+
+.appointList{
+  float: right;
+  box-shadow: -5px 0px 2px rgb(130, 130, 130);
+  height: 52.5rem;
+}
+
+.form-control{
+  width: 50%;
+  margin: auto;
+}
