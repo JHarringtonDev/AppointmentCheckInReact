@@ -48,6 +48,7 @@ function App() {
         <Route path='/MakeAppointment' element={<MakeAppointment/>} />
         <Route path='/Queue' element={<Queue/>} />
         <Route path="/Dashboard" element={<Dashboard/>}/>
+        <Route path="/edit/:id" element={<Edit />} />
           
 
 
@@ -57,7 +58,7 @@ function App() {
         {/* <Route path='/Preferences' element={<Preferences/>}/> */}
 
         {/* <Route exact path="/" element={<RecordList />} />
-       <Route path="/edit/:id" element={<Edit />} />
+       
        <Route path="/create" element={<Create />} /> */}
       </Routes>
     {/* </Router> */}

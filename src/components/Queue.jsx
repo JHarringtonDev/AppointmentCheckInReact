@@ -65,7 +65,7 @@ export default function Queue() {
      );
    });
  }
- 
+//  console.log(records)
  // This following section will display the table with the records of individuals.
  return (
    <div>

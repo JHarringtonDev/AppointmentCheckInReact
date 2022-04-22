@@ -2,19 +2,21 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
  
 export default function Edit() {
+  const [records, setRecords] = useState([]);
  const [form, setForm] = useState({
-   name: "",
-   position: "",
-   level: "",
-   records: [],
+   phoneNumber: ''
  });
  const params = useParams();
  const navigate = useNavigate();
+ let gRecords
+ let gId = params.id.toString()
  
  useEffect(() => {
    async function fetchData() {
      const id = params.id.toString();
+     
      const response = await fetch(`http://localhost:5000/record/${params.id.toString()}`);
+     gId = params.id.toString();
  
      if (!response.ok) {
        const message = `An error has occurred: ${response.statusText}`;
@@ -32,10 +34,30 @@ export default function Edit() {
      setForm(record);
    }
  
-   fetchData();
- 
-   return;
- }, [params.id, navigate]);
+   
+
+    // This method fetches the records from the database.
+
+    fetchData();
+
+    async function getRecords() {
+      const response = await fetch(`http://localhost:5000/record/`);
+  
+      if (!response.ok) {
+        const message = `An error occurred: ${response.statusText}`;
+        window.alert(message);
+        return;
+      }
+  
+      const records = await response.json();
+      setRecords(records);
+    }
+  
+    getRecords();
+  
+    return;
+  },[params.id, navigate], [records.length]);
+
  
  // These methods will update the state properties.
  function updateForm(value) {
@@ -43,33 +65,55 @@ export default function Edit() {
      return { ...prev, ...value };
    });
  }
+
+
+
+//  useEffect(() => {
+  
+  
+
+//   return;
+// });
+
+
+// let foundAppoint = records.find(params.id.toString())
+
+const result = records.find( ({ _id }) => _id === gId );
+
+// console.log(result)
  
  async function onSubmit(e) {
    e.preventDefault();
    const editedPerson = {
-     name: form.name,
-     position: form.position,
-     level: form.level,
+     phoneNumber: form.phoneNumber
+    //  name: form.name,
+    //  position: form.position,
+    //  level: form.level,
    };
- 
-   // This will send a post request to update the data in the database.
+  if(form.phoneNumber == result.phoneNumber){
+    // This will send a post request to update the data in the database.
    await fetch(`http://localhost:5000/update/${params.id}`, {
-     method: "POST",
-     body: JSON.stringify(editedPerson),
-     headers: {
-       'Content-Type': 'application/json'
-     },
-   });
- 
-   navigate("/");
+    method: "POST",
+    body: JSON.stringify(editedPerson),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  });
+
+  navigate("/Queue");
+  }else{
+    alert(`you submitted${e.target.value}`)
+  }
+   
  }
- 
+//  console.log(gRecords)
+
  // This following section will display the form that takes input from the user to update the data.
  return (
    <div>
-     <h3>Update Record</h3>
+     <h3>Check-in for your appointment.</h3>
      <form onSubmit={onSubmit}>
-       <div className="form-group">
+       {/* <div className="form-group">
          <label htmlFor="name">Name: </label>
          <input
            type="text"
@@ -128,11 +172,27 @@ export default function Edit() {
        </div>
        </div>
        <br />
- 
+  */}
+        <div className="form-group">
+          <label htmlFor="phoneNumber">Phone Number:</label>
+            {/* <div className="form-check form-check-inline"> */}
+              <input
+                // className="form-check-input"
+                type="tel"
+                name="phoneNumber"
+                id="phoneNumber"
+                value={form.value}
+                maxLength= "10"
+                minLength= "10"
+                onChange={(e) => updateForm({phoneNumber: e.target.value})}
+                required
+              />
+            {/* </div> */}
+            </div>
        <div className="form-group">
          <input
            type="submit"
-           value="Update Record"
+           value="Check-in"
            className="btn btn-primary"
          />
        </div>
