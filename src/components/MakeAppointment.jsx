@@ -58,6 +58,7 @@ const MakeAppointment = (props) => {
               required
             />
           </div>
+          
           <div className="form-group">
             <label htmlFor="lname">Last Name</label>
             <input
@@ -69,9 +70,9 @@ const MakeAppointment = (props) => {
               required
             />
           </div>
+          
           <div className="form-group">
           <label htmlFor="phoneNumber">Phone Number:</label>
-            {/* <div className="form-check form-check-inline"> */}
               <input
                 className="form-control"
                 type="tel"
@@ -83,11 +84,10 @@ const MakeAppointment = (props) => {
                 onChange={(e) => updateForm({ phoneNumber: e.target.value })}
                 required
               />
-            {/* </div> */}
             </div>
+          
           <div className="form-group">
           <label htmlFor="appointmentTime">Appointment Time:</label>
-            {/* <div className="form-check form-check-inline"> */}
               <input
                 className="form-control"
                 type="time"
@@ -99,11 +99,10 @@ const MakeAppointment = (props) => {
                 onChange={(e) => updateForm({ appointmentTime: e.target.value })}
                 required
               />
-            {/* </div> */}
             </div>
+            
             <div className="form-group">
           <label htmlFor="appointmentDate">Appointment Date:</label>
-            {/* <div className="form-check form-check-inline"> */}
               <input
                 className="form-control"
                 type="date"
@@ -113,8 +112,8 @@ const MakeAppointment = (props) => {
                 onChange={(e) => updateForm({ appointmentDate: e.target.value })}
                 required
               />
-            {/* </div> */}
             </div>
+          
           <div className="form-group">
             <input
               type="submit"

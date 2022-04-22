@@ -7,17 +7,6 @@ const Record = (props) => (
    <span className="qLName">{props.record.lname[0]}.</span>
    <span className="qTime">{props.record.appointmentTime}</span><br/>
    <span className="qType">Appointment</span>
-   {/* <td>{props.record.appointmentDate}</td> */}
-   {/* <td>
-     <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
-     <button className="btn btn-link"
-       onClick={() => {
-         props.deleteRecord(props.record._id);
-       }}
-     >
-       Delete
-     </button>
-   </td> */}
  </div>
 );
  
@@ -66,7 +55,6 @@ export default function Queue() {
      );}
    });}
  }
-//  console.log(records)
  // This following section will display the table with the records of individuals.
  return (
    <div className="appointList">
@@ -74,5 +62,3 @@ export default function Queue() {
    </div>
  );
 }
-
-// export default Queue

@@ -1,6 +1,3 @@
-import PropTypes from 'prop-types'
-import Header from './Header'
-
 const Login = (props) => {
     return(
        <div className="login">

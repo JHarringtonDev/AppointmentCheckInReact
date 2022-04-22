@@ -5,17 +5,8 @@ const Record = (props) => (
  <tr>
    <td>{props.record.fname}</td>
    <td>{`${props.record.lname[0].toUpperCase()}.`}</td>
-   {/* <td>{props.record.appointmentTime}</td>
-   <td>{props.record.appointmentDate}</td> */}
    <td>
      <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Check-in</Link>
-     {/* <button className="btn btn-link"
-       onClick={() => {
-         props.deleteRecord(props.record._id);
-       }}
-     >
-       Delete
-     </button> */}
    </td>
  </tr>
 );
@@ -43,29 +34,17 @@ export default function Queue() {
    return;
  }, [records.length]);
  
- // This method will delete a record
-//  async function deleteRecord(id) {
-//    await fetch(`http://localhost:5000/${id}`, {
-//      method: "DELETE"
-//    });
- 
-//    const newRecords = records.filter((el) => el._id !== id);
-//    setRecords(newRecords);
-//  }
- 
  // This method will map out the records on the table
  function recordList() {
    return records.map((record) => {
      return (
        <Record
          record={record}
-        //  deleteRecord={() => deleteRecord(record._id)}
          key={record._id}
        />
      );
    });
  }
-//  console.log(records)
  // This following section will display the table with the records of individuals.
  return (
    <div>
@@ -75,8 +54,6 @@ export default function Queue() {
          <tr>
            <th>First Name</th>
            <th>Last Name</th>
-           {/* <th>Time</th>
-           <th>Date</th> */}
          </tr>
        </thead>
        <tbody>{recordList()}</tbody>
@@ -84,5 +61,3 @@ export default function Queue() {
    </div>
  );
 }
-
-// export default Queue
