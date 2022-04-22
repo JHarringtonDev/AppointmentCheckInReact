@@ -10,7 +10,7 @@ const Record = (props) => (
    <td>{props.record.appointmentTime}</td>
    <td>{props.record.appointmentDate}</td>
    <td>
-     <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
+     {/* <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> | */}
      <button className="btn btn-link"
        onClick={() => {
          props.deleteRecord(props.record._id);
@@ -68,7 +68,7 @@ export default function Dashboard() {
      );
    });
  }
- const loggedIn = localStorage.getItem('token')
+ const loggedIn = sessionStorage.getItem('token')
  // This following section will display the table with the records of individuals.
  if(loggedIn){
   return (

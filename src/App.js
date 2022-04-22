@@ -7,6 +7,7 @@ import {
 import Dashboard from './components/Dashboard';
 import Login from './components/Login/Login';
 import Edit from "./components/edit";
+import PatientConfirm from "./components/PatientConfirm";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/MakeAppointment' element={<MakeAppointment/>} />
         <Route path='/Queue' element={<Queue/>} />
         <Route path="/Dashboard" element={<Dashboard/>}/>
+        <Route path="/PatientConfirm/:id" element={<PatientConfirm/>} />
         <Route path="/edit/:id" element={<Edit />} />
       </Routes>
 

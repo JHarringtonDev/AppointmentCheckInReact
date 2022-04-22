@@ -6,7 +6,7 @@ const Record = (props) => (
    <td>{props.record.fname}</td>
    <td>{`${props.record.lname[0].toUpperCase()}.`}</td>
    <td>
-     <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Check-in</Link>
+     <Link className="btn btn-link" to={`/patientConfirm/${props.record._id}`}>Check-in</Link>
    </td>
  </tr>
 );
