@@ -45,16 +45,19 @@ export default function Queue() {
  
  // This method will map out the records on the table
  function recordList() {
-   {return records.map((record) => {
+   {let checkedAppoint = records.map((record) => {
 
      if(record.checkedIn === true){return (
        <Record
          record={record}
-        //  key={record._id}
+         key={record._id} 
        />
      );}
-   });}
- }
+   })
+   return checkedAppoint.sort((a,b) => {
+     return a.props.record.appointmentTime < b.props.record.appointmentTime ? -1 : 1
+   })};}
+ 
  // This following section will display the table with the records of individuals.
  return (
    <div className="appointList">
