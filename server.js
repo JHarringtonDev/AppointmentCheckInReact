@@ -38,4 +38,5 @@ if(process.env.NODE_ENV === "production"){
   })
 }
 
-app.listen(process.env.PORT || 8080, () => console.log('API is running on http://localhost:8080/login'));
+const PORT = process.env.PORT
+app.listen(PORT || 8080, () => console.log('API is running on http://localhost:8080/login'));
