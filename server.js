@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 require("dotenv").config({ path: "./config.env" });
 const port = process.env.PORT || 5000;
+const path = require('path')
 app.use(cors());
 app.use(express.json());
 app.use(require("./routes/record"));
@@ -24,5 +25,17 @@ app.use('/login', (req, res) => {
     token: 'test123'
   });
 });
+
+if(process.env.NODE_ENV === "production"){
+  app.use(express.static(path.join(__dirname,'/client/build')))
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client','build','index.html'))
+  })
+} else {
+  app.get('/', (req, res) => {
+    res.send('API RUNNING')
+  })
+}
 
 app.listen(8080, () => console.log('API is running on http://localhost:8080/login'));
