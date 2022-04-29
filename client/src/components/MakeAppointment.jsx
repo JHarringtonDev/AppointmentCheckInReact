@@ -48,7 +48,7 @@ const MakeAppointment = (props) => {
         <h3>Schedule Your Appointment</h3>
         <form onSubmit={onSubmit}>
           <div className="form-group">
-            <label htmlFor="fname">First Name</label>
+            <label htmlFor="fname">First Name:</label>
             <input
               type="text"
               className="form-control"
@@ -60,7 +60,7 @@ const MakeAppointment = (props) => {
           </div>
           
           <div className="form-group">
-            <label htmlFor="lname">Last Name</label>
+            <label htmlFor="lname">Last Name:</label>
             <input
               type="text"
               className="form-control"
@@ -87,13 +87,13 @@ const MakeAppointment = (props) => {
             </div>
           
           <div className="form-group">
-          <label htmlFor="appointmentTime">Appointment Time:</label>
+          <label htmlFor="appointmentTime">Appointment Time: (Office Hours are 7 a.m. - 3:30 p.m.)</label>
               <input
                 className="form-control"
                 type="time"
                 name="appointmentTime"
                 id="appointmentTime"
-                min="7:00"
+                min="07:00"
                 max="15:30"
                 value={form.appointmentTime}
                 onChange={(e) => updateForm({ appointmentTime: e.target.value })}
@@ -101,7 +101,7 @@ const MakeAppointment = (props) => {
               />
             </div>
             
-            <div className="form-group">
+            {/* <div className="form-group">
           <label htmlFor="appointmentDate">Appointment Date:</label>
               <input
                 className="form-control"
@@ -112,7 +112,7 @@ const MakeAppointment = (props) => {
                 onChange={(e) => updateForm({ appointmentDate: e.target.value })}
                 required
               />
-            </div>
+            </div> */}
           
           <div className="form-group">
             <input

@@ -2,13 +2,24 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logout from './Logout'
 import LoginButton from './LoginButton'
+
+let newTime
  
-const Record = (props) => (
- <tr>
+const Record = (props) => {
+  let time = props.record.appointmentTime.split(':')
+      let hour = parseInt(time[0])
+      if(hour > 12){
+          newTime=`${hour-12}:${time[1]} p.m.`
+      }else if(hour === 12){
+          newTime = `${hour}:${time[1]} p.m.`
+      }else{
+          newTime = `${hour}:${time[1]} a.m.`
+      }
+ return(<tr>
    <td>{props.record.fname}</td>
    <td>{props.record.lname}</td>
-   <td>{props.record.appointmentTime}</td>
-   <td>{props.record.appointmentDate}</td>
+   <td>{newTime}</td>
+   <td>{props.record.phoneNumber}</td>
    <td>
      {/* <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> | */}
      <button className="btn btn-link"
@@ -19,8 +30,8 @@ const Record = (props) => (
        Delete
      </button>
    </td>
- </tr>
-);
+ </tr>)
+};
  
 export default function Dashboard() {
  const [records, setRecords] = useState([]);
@@ -57,23 +68,24 @@ export default function Dashboard() {
  
  // This method will map out the records on the table
  function recordList() {
-   return records.map((record) => {
-     return (
-       
-       <Record
-         record={record}
-         deleteRecord={() => deleteRecord(record._id)}
-         key={record._id}
-       />
-     );
-   });
- }
+  {let appointments = records.map((record) => {
+   return (
+      <Record
+        deleteRecord={() => deleteRecord(record._id)}
+        record={record}
+        key={record._id} 
+      />
+    );}
+  )
+  return appointments.sort((a,b) => {
+    return a.props.record.appointmentTime < b.props.record.appointmentTime ? -1 : 1
+  })};}
  const loggedIn = sessionStorage.getItem('token')
  // This following section will display the table with the records of individuals.
  if(loggedIn){
   return (
-    <div>
-      <h3>Appointment Queue</h3>
+    <div className="appList">
+      <h3>Appointment List</h3>
        <Logout />
       <table className="table table-striped" style={{ marginTop: 20 }}>
         <thead>
@@ -81,7 +93,8 @@ export default function Dashboard() {
             <th>First Name</th>
             <th>Last Name</th>
             <th>Time</th>
-            <th>Date</th>
+            <th>Phone #</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>{recordList()}</tbody>

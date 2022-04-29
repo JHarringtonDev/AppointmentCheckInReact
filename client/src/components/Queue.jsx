@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import Video from './Video'
 import Weather from './Weather'
 
-let time
 let newTime
-let hour
 
 const Record = (props) => {
    let time = props.record.appointmentTime.split(':')
       let hour = parseInt(time[0])
       if(hour > 12){
           newTime=`${hour-12}:${time[1]} p.m.`
+      }else if(hour === 12){
+          newTime = `${hour}:${time[1]} p.m.`
       }else{
           newTime = `${hour}:${time[1]} a.m.`
       }

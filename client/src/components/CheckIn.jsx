@@ -37,23 +37,25 @@ export default function Queue() {
  // This method will map out the records on the table
  function recordList() {
    return records.map((record) => {
-     return (
+
+    if(record.checkedIn === false){ return (
        <Record
          record={record}
          key={record._id}
        />
-     );
+     );}
    });
  }
  // This following section will display the table with the records of individuals.
  return (
    <div>
-     <h3>Appointment Queue</h3>
+     <h3>Check-in to your appointment</h3>
      <table className="table table-striped" style={{ marginTop: 20 }}>
        <thead>
          <tr>
            <th>First Name</th>
            <th>Last Name</th>
+           <th></th>
          </tr>
        </thead>
        <tbody>{recordList()}</tbody>
