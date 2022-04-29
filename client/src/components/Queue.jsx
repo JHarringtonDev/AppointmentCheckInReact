@@ -1,14 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
- 
-const Record = (props) => (
- <div className="qAppoint">
-   <span className="qFName">{props.record.fname.substring(0, 3)}</span>
-   <span className="qLName">{props.record.lname[0]}.</span>
-   <span className="qTime">{props.record.appointmentTime}</span><br/>
-   <span className="qType">Appointment</span>
- </div>
-);
+import Video from './Video'
+import Weather from './Weather'
+
+let time
+let newTime
+let hour
+
+const Record = (props) => {
+   let time = props.record.appointmentTime.split(':')
+      let hour = parseInt(time[0])
+      if(hour > 12){
+          newTime=`${hour-12}:${time[1]} p.m.`
+      }else{
+          newTime = `${hour}:${time[1]} a.m.`
+      }
+      return(
+      <div className="qAppoint">
+        <div className= 'appointInfo'>
+      <span className="qFName">{props.record.fname.substring(0, 3)}</span>
+      <span className="qLName">{props.record.lname[0]}.</span>
+      <span className="qTime">{newTime}</span><br/>
+      {/* <span className="qType">Appointment</span> */}
+        </div>
+   </div>)
+};
  
 export default function Queue() {
  const [records, setRecords] = useState([]);
@@ -46,9 +62,9 @@ export default function Queue() {
  // This method will map out the records on the table
  function recordList() {
    {let checkedAppoint = records.map((record) => {
-
      if(record.checkedIn === true){return (
        <Record
+        
          record={record}
          key={record._id} 
        />
@@ -60,8 +76,12 @@ export default function Queue() {
  
  // This following section will display the table with the records of individuals.
  return (
-   <div className="appointList">
+   <div className="qBlock">
+  <div className="appointList">
     {recordList()}
+   </div>
+     <Video/>
+     <Weather/>
    </div>
  );
 }
