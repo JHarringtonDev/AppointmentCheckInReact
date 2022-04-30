@@ -34,7 +34,7 @@ export default function Weather(){
         <span className='timeDisplay'> </span>
         </div>
         <div className='weatherDis'>
-        <img id='weathericon'src=" " alt="current condition" />
+        <img id='weathericon'src=" " alt="current weather condition (blocked due to mixed content error)" />
         <span className='tempDisplay'> </span>
         </div>
     </div>
