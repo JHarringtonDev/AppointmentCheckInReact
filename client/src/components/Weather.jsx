@@ -1,5 +1,5 @@
 function getFetch(){
-    const url = `http://api.weatherapi.com/v1/current.json?key=a3d8677505f14da480c220303222804&q=89109&aqi=no`
+    const url = `https://api.weatherapi.com/v1/current.json?key=a3d8677505f14da480c220303222804 LIVE&q=89109&aqi=no`
 
     fetch(url)
         .then(res => res.json())
@@ -34,7 +34,7 @@ export default function Weather(){
         <span className='timeDisplay'> </span>
         </div>
         <div className='weatherDis'>
-        <img id='weathericon'src=" " alt="current weather condition (blocked due to mixed content error)" />
+        <img id='weathericon'src=" " alt="current weather condition" />
         <span className='tempDisplay'> </span>
         </div>
     </div>
