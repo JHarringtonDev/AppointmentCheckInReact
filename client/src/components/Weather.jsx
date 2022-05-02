@@ -1,5 +1,5 @@
 function getFetch(){
-    const url = `https://api.weatherapi.com/v1/current.json?key=a3d8677505f14da480c220303222804 LIVE&q=89109&aqi=no`
+    const url = `https://api.weatherapi.com/v1/current.json?key=a3d8677505f14da480c220303222804&q=89109&aqi=no`
 
     fetch(url)
         .then(res => res.json())
