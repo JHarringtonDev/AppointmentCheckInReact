@@ -5,7 +5,7 @@ const Home = (props) => {
     return (
     <div className = 'home'>
         <h1 className='welcomeMessage'>Welcome to my Appointment Manager React application</h1>
-        <p>(Note: Some styles still need to be implemented.)</p>
+        {/* <p>(Note: Some styles still need to be implemented.)</p> */}
     </div>
     )
 }

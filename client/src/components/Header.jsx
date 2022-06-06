@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { NavLink } from "react-router-dom"
-import logo from '../images/Journey-Full-Logo.png'
+import logo from '../images/default-monochrome-white.png'
 
 const Header = (props) => {
     return(

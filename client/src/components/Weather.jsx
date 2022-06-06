@@ -1,9 +1,8 @@
-function getFetch(){
+async function getFetch() {
     const url = `https://api.weatherapi.com/v1/current.json?key=a3d8677505f14da480c220303222804&q=89109&aqi=no`
 
-    fetch(url)
-        .then(res => res.json())
-        .then(data => {
+   try { const res = await fetch(url)
+        const data = await res.json()
             document.querySelector('.cityDisplay').innerText = `${data.location.name}, ${data.location.region}`
             document.querySelector('.tempDisplay').innerText = `${data.current.temp_f}°F`
             document.getElementById('weathericon').src = `${data.current.condition.icon}`
@@ -16,14 +15,14 @@ function getFetch(){
                 document.querySelector('.timeDisplay').innerText = `${weaHour}:${weaTime[1]} p.m.`
             }else{
                 document.querySelector('.timeDisplay').innerText = `${weaHour}:${weaTime[1]} a.m.`
-            }
+            }}
             
             
-        })
-        .catch(err => {
-            console.log(`error ${err}`)
-        })
-}
+        
+        catch(err){
+            console.log(`error: ${err}`)
+        }
+    }
 
 export default function Weather(){
     getFetch()

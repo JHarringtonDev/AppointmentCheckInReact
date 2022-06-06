@@ -188,3 +188,14 @@ iframe{
 .appList{
   height:2%;
 }
+
+@media screen and (max-width:1102px){
+  /* .navItems>li{
+    background-color: aqua;
+    font-size:1.2rem;
+    height: 75%;
+  } */
+  .navItems{
+    width: 10%;
+  }
+}
