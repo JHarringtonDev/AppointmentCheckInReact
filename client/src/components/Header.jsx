@@ -6,8 +6,8 @@ const Header = (props) => {
     return(
         <header className="Header">
             <nav>
-            <NavLink to="/" className="journeyLogo">
-            <img src={logo} alt="Journey Diagnostics Logo" className='companyLogo'/>
+            <NavLink to="/" className="mainLogo">
+            <img src={logo} alt="Logo" className='companyLogo'/>
             </NavLink>
                 <ul className="navItems">
                     <li><NavLink to="/Queue" className="inactive" activeclassname="active" exact={true}>Appointment Queue</NavLink></li>
